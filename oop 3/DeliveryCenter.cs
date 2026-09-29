@@ -8,7 +8,6 @@ namespace oop_3
     {
         private Shipment[] shipments = new Shipment[20];
         private int count = 0;
-
         public DeliveryCenter()
         {
             shipments = new Shipment[10];
@@ -109,16 +108,14 @@ namespace oop_3
 
         public void PrintAllShipments()
         {
-            Console.WriteLine($"All Shipments in {CenterName}");
-            if (count == 0)
-            {
-                Console.WriteLine("No shipments available.");
-                return;
-            }
+            Console.WriteLine("Delivery Center");
 
-            for (int i = 0; i < count; i++)
+            foreach (var shipment in shipments)
             {
-                shipments[i].PrintShipment();
+                if (shipment != null)
+                {
+                    shipment.PrintShipment(); 
+                }
             }
         }
         public int Count
