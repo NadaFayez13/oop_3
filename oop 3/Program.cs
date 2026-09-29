@@ -42,6 +42,18 @@
             DeliveryHelper.PrintShipmentDetails(exp);
             DeliveryHelper.PrintShipmentDetails(inter);
             #endregion
+
+
+            #region practical 9.j
+            Console.WriteLine("\nDemonstration of UpdateWeight() Overloading");
+            Console.WriteLine($"Original Weight: {std.Weight} KG");
+
+            std.UpdateWeight(5.0m);
+            Console.WriteLine($"Updated Weight: {std.Weight} KG");
+
+            std.UpdateWeight(5.0m, 0.5m);
+            Console.WriteLine($"Updated Weight with Packaging: {std.Weight} KG");
+            #endregion
         }
     }
 }
