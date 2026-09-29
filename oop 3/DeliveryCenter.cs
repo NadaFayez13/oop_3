@@ -6,6 +6,8 @@ namespace oop_3
 {
     public class DeliveryCenter
     {
+
+        public Driver Driver { get; set; }
         private Shipment[] shipments = new Shipment[20];
         private int count = 0;
         public DeliveryCenter()
@@ -109,6 +111,11 @@ namespace oop_3
         public void PrintAllShipments()
         {
             Console.WriteLine("Delivery Center");
+
+            if (Driver != null)
+            {
+                Console.WriteLine($"Driver : {Driver.Name}\n");
+            }
 
             foreach (var shipment in shipments)
             {
