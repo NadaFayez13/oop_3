@@ -64,6 +64,19 @@ namespace oop_3
             }
         }
 
+        public void UpdateWeight(decimal newWeight)
+        {
+            Weight = newWeight;
+        }
+
+        public void UpdateWeight(decimal newWeight, decimal extraPackingWeight)
+        {
+            if (newWeight > 0 && extraPackingWeight >= 0)
+            {
+                Weight = newWeight + extraPackingWeight;
+            }
+        }
+
         public decimal DeliveryFee
         {
             get { return deliveryFee; }
