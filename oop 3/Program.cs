@@ -15,6 +15,8 @@
             #endregion
 
 
+          
+
             #region practical 9.d 9.e 9.f
             DeliveryAddress addr1 = new DeliveryAddress("12 Street", "Alex", '1');
             StandardShipment std = new StandardShipment("01", "Books", 3.0m, 50.0m, addr1);
@@ -28,7 +30,9 @@
 
 
             #region practical 9.g  9.h  9.i
+            Driver driver = new Driver("Ahmed Mohamed");
             DeliveryCenter center = new DeliveryCenter("Alex Main Center");
+            center.Driver = driver;
 
             center.AddShipment(std);
             center.AddShipment(exp);
@@ -70,6 +74,9 @@
                 s.PrintShipment();
             }
             #endregion
+
+
+         
         }
     }
 }
