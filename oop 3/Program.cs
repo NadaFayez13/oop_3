@@ -25,6 +25,23 @@
             DeliveryAddress addr3 = new DeliveryAddress("789 Street", "Aswan", '3');
             InternationalShipment inter = new InternationalShipment("03", "Documents", 1.5m, 150.0m, addr3, "egy", 70.0m);
             #endregion
+
+
+            #region practical 9.g  9.h  9.i
+            DeliveryCenter center = new DeliveryCenter("Alex Main Center");
+
+            center.AddShipment(std);
+            center.AddShipment(exp);
+            center.AddShipment(inter);
+
+            Console.WriteLine("All Shipments in Delivery Center");
+            center.PrintAllShipments();
+
+            Console.WriteLine("\nDeliveryHelper Print Details");
+            DeliveryHelper.PrintShipmentDetails(std);
+            DeliveryHelper.PrintShipmentDetails(exp);
+            DeliveryHelper.PrintShipmentDetails(inter);
+            #endregion
         }
     }
 }
