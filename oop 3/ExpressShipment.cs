@@ -7,7 +7,6 @@ namespace oop_3
     public class ExpressShipment : Shipment
     {
         private decimal extraFee;
-
         public decimal ExtraFee
         {
             get { return extraFee; }
@@ -23,7 +22,7 @@ namespace oop_3
         {
             get
             {
-                return DeliveryFee + (Weight * 5m) + ExtraFee;
+                return base.EstimatedCost + ExtraFee;
             }
         }
         public ExpressShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, decimal extraFee)
@@ -34,8 +33,15 @@ namespace oop_3
 
         public override void PrintShipment()
         {
-            base.PrintShipment();
-            Console.WriteLine($"extra fee: {ExtraFee:C}");
+            Console.WriteLine("Express Shipment");
+            Console.WriteLine($"Tracking Code  : {TrackingCode}");
+            Console.WriteLine($"Description    : {Description}");
+            Console.WriteLine($"Weight         : {Weight} KG");
+            Console.WriteLine($"Delivery Fee   : {DeliveryFee} EGP");
+            Console.WriteLine($"Extra Fee      : {ExtraFee} EGP");
+            Console.WriteLine($"Estimated Cost : {EstimatedCost} EGP");
         }
+
+
     }
 }

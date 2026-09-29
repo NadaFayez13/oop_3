@@ -6,8 +6,8 @@ namespace oop_3
 {
     public class InternationalShipment : Shipment
     {
-        private string destinationCountry;
-        private decimal customsFee;
+        public string destinationCountry { get; set; }
+        public decimal customsFee { get; set; }
 
         public string DestinationCountry
         {
@@ -20,7 +20,6 @@ namespace oop_3
                 }
             }
         }
-
         public decimal CustomsFee
         {
             get { return customsFee; }
@@ -32,12 +31,11 @@ namespace oop_3
                 }
             }
         }
-
         public override decimal EstimatedCost
         {
             get
             {
-                return DeliveryFee + (Weight * 5m) + CustomsFee;
+                return base.EstimatedCost + CustomsFee;
             }
         }
 
@@ -57,9 +55,14 @@ namespace oop_3
 
         public override void PrintShipment()
         {
-            base.PrintShipment();
-            Console.WriteLine($"destination country: {DestinationCountry}");
-            Console.WriteLine($"customs fee: {CustomsFee:C}");
+            Console.WriteLine("International Shipment");
+            Console.WriteLine($"Tracking Code      : {TrackingCode}");
+            Console.WriteLine($"Description        : {Description}");
+            Console.WriteLine($"Weight             : {Weight} KG");
+            Console.WriteLine($"Delivery Fee       : {DeliveryFee} EGP");
+            Console.WriteLine($"Destination Country: {DestinationCountry}");
+            Console.WriteLine($"Customs Fee        : {CustomsFee} EGP");
+            Console.WriteLine($"Estimated Cost     : {EstimatedCost} EGP");
         }
     }
 }
