@@ -13,6 +13,18 @@
             // Static Binding occurs at compile time, where the method to be called is determined based on the reference type. It's used with method overloading and static methods.
             // Dynamic Binding occurs at runtime, where the method to be called is determined based on the actual object type. It;s used with method overriding.
             #endregion
+
+
+            #region practical 9.d 9.e 9.f
+            DeliveryAddress addr1 = new DeliveryAddress("12 Street", "Alex", '1');
+            StandardShipment std = new StandardShipment("01", "Books", 3.0m, 50.0m, addr1);
+
+            DeliveryAddress addr2 = new DeliveryAddress("456 Street", "Cairo", '2');
+            ExpressShipment exp = new ExpressShipment("02", "Electronics", 2.0m, 100.0m, addr2, 30.0m);
+
+            DeliveryAddress addr3 = new DeliveryAddress("789 Street", "Aswan", '3');
+            InternationalShipment inter = new InternationalShipment("03", "Documents", 1.5m, 150.0m, addr3, "egy", 70.0m);
+            #endregion
         }
     }
 }
