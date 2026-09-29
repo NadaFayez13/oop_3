@@ -54,6 +54,22 @@
             std.UpdateWeight(5.0m, 0.5m);
             Console.WriteLine($"Updated Weight with Packaging: {std.Weight} KG");
             #endregion
+
+
+            #region practical 9.k
+            Console.WriteLine("\nMixed Polymorphic Shipment Array");
+            Shipment[] mixedShipments = new Shipment[]
+            {
+             new StandardShipment("SH201", "Furniture", 12.0m, 60.0m, new DeliveryAddress("Alexandria", "bitash St", 12)),
+              new ExpressShipment("SH202", "Laptop", 2.5m, 120.0m, new DeliveryAddress("Cairo", "dokki St", 44), 40.0m),
+              new InternationalShipment("SH203", "Sample Items", 1.0m, 200.0m, new DeliveryAddress("Lebanon", "paris St", 221), "UK", 90.0m)
+            };
+
+            foreach (Shipment s in mixedShipments)
+            {
+                s.PrintShipment();
+            }
+            #endregion
         }
     }
 }
